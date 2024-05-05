@@ -1,4 +1,4 @@
---tworzenia nowej bazy danych:
+--tworzenie nowej bazy danych:
 CREATE DATABASE db_glazura_Gniezno;
 
 --aktywowanie bazy:
@@ -94,7 +94,7 @@ VALUES
 		('Domex', '5823955497', 'M³ynarska 100', '62-300', 'Wrzeœnia', '775523396'),
 		('PEP-BUD', '3016239350', 'Lipowa 10', '38-232', '£ódŸ', '929947689');
 
---wyœwitlenie wszystki danych w tabeli tbl_klienci:
+--wyœwietlenie wszystkich danych w tabeli tbl_klienci:
 SELECT * FROM tbl_klienci;
 
 --dodawanie danych do tabeli tbl_faktury: 
@@ -182,7 +182,7 @@ VALUES
 		('FS 80/2023', '2023-03-27', '2023-03-27', '2', 'karta'),
 		('FS 81/2023', '2023-03-28', '2023-03-31', '8', 'przelew');
 
---wyœwitlenie wszystki danych w tabeli tbl_faktury:
+--wyœwietlenie wszystkich danych w tabeli tbl_faktury:
 SELECT * FROM tbl_faktury;
 
 --dodawanie danych do tabeli tbl_producent:
@@ -204,7 +204,7 @@ VALUES
 		('Mykonos', 'Hiszpania'),
 		('Vives', 'Hiszpania');
 
---wyœwitlenie wszystki danych w tabeli tbl_producent:
+--wyœwietlenie wszystkich danych w tabeli tbl_producent:
 SELECT * FROM tbl_producent;
 
 --dodawanie danych do tabeli tbl_plytki:
@@ -271,7 +271,7 @@ VALUES
 		('Tacoma White Rect', '2', '3' , 32.90),
 		('Keystone Grey', '1', '4', 42.00);
 
---wyœwitlenie wszystki danych w tabeli tbl_plytki:
+--wyœwietlenie wszystkich danych w tabeli tbl_plytki:
 SELECT * FROM tbl_plytki;
 
 --dodawanie danych do tabeli tbl_pozycje_faktur
@@ -387,11 +387,11 @@ VALUES
 		('80', '9', 5.88),
 		('81', '1', 10.6);
 
---wyœwitlenie wszystki danych w tabeli tbl_pozycje_faktur:
+--wyœwietlenie wszystkich danych w tabeli tbl_pozycje_faktur:
 SELECT * FROM tbl_pozycje_faktur;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
---wyszukaj firm z Gniezna:
+--wyszukaj firmy z Gniezna:
 SELECT 
 	nazwa_firmy AS 'Firmy z Gniezna', 
 	NIP, 
@@ -448,7 +448,7 @@ INNER JOIN tbl_faktury
 ON tbl_faktury.klient_id = tbl_klienci.id_klienta
 WHERE nazwisko IS NOT NULL;
 
---œrednia cena p³ytki brutto przy zaokr¹gleniu do liczb ca³kowitych:
+--oblicz œredni¹ cenê brutto p³ytki przy zaokr¹gleniu do liczb ca³kowitych:
 SELECT 
 	AVG(CAST(cena_jednostkowa_netto*1.23 AS int)) AS œrednia_cena_brutto
 FROM tbl_plytki;
